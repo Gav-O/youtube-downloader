@@ -1,0 +1,5 @@
+# secrets
+cookies.txt
+.env
+*.key
+*.pem
