@@ -12,9 +12,10 @@ app.post("/download", (req, res) => {
   const url = req.body.url;
   const tempOutput = "temp_video.mp4";
   const finalOutput = "video_converted.mp4";
+  const cookiesPath = path.join(__dirname, "cookies.txt"); // Path to cookies.txt file
 
-  // Download video using yt-dlp (ensure the best quality is chosen)
-  const ytdlpCommand = `yt-dlp -f "bv*+ba[ext=m4a]/b[ext=mp4]" --merge-output-format mp4 -o "${tempOutput}" "${url}"`;
+  // Download video using yt-dlp with cookies file (ensure the best quality is chosen)
+  const ytdlpCommand = `yt-dlp --cookies "${cookiesPath}" -f "bv*+ba[ext=m4a]/b[ext=mp4]" --merge-output-format mp4 -o "${tempOutput}" "${url}"`;
 
   exec(ytdlpCommand, err => {
     if (err) {
