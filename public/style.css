@@ -1,4 +1,3 @@
-/* public/style.css */
 body {
   font-family: Arial, sans-serif;
   background-color: #0f0f0f;
@@ -34,4 +33,28 @@ button {
 
 #status {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  input {
+    width: 90%; /* Increase input width for mobile */
+    font-size: 18px; /* Larger font size */
+  }
+
+  button {
+    padding: 12px 25px; /* Increase button size */
+    font-size: 18px; /* Larger font size */
+  }
+
+  h1 {
+    font-size: 2em; /* Larger heading size for better readability */
+  }
+
+  h4 {
+    font-size: 1.2em; /* Slightly larger subheading */
+  }
+
+  .container {
+    padding: 10px; /* Add some padding to prevent things from being too close to the edges */
+  }
 }
